@@ -1,4 +1,4 @@
-const { createLog, getLogs } = require("../service/log-service");
+const { createLog, getLogs, getTotalData } = require("../service/log-service");
 
 const create = async (req, res) => {
   try {
@@ -22,7 +22,11 @@ const create = async (req, res) => {
 
 const get = async (req, res) => {
   try {
-    const response = await getLogs();
+    const data = {
+      skipNumber: req.query.skip,
+      limitNumber: req.query.limit,
+    };
+    const response = await getLogs(data);
     return res.status(201).json({
       data: response,
       success: true,
@@ -39,7 +43,27 @@ const get = async (req, res) => {
   }
 };
 
+const getLength = async (req, res) => {
+  try {
+    const response = await getTotalData();
+    return res.status(201).json({
+      data: response,
+      success: true,
+      message: "total length fetched",
+      error: {},
+    });
+  } catch (error) {
+    return res.status(500).json({
+      data: {},
+      success: false,
+      message: "not able to fetched the length of data",
+      error: error,
+    });
+  }
+};
+
 module.exports = {
   create,
   get,
+  getLength,
 };
