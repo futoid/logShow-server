@@ -1,7 +1,7 @@
 const express = require("express");
 const PORT = 3000;
-const connectToDatabase = require("./src/config/database");
-const appRoutes = require("./src/routes/index");
+const connectToDatabase = require("./config/database");
+const appRoutes = require("./routes/index");
 var bodyParser = require("body-parser");
 
 async function startServer() {
