@@ -2,7 +2,7 @@
 > Average API response time is 87ms for limit = 4 ~ demo attached
 
 ![image](https://github.com/dyte-submissions/november-2023-hiring-futoid/assets/65010518/18ae1f56-6894-4ed3-93e7-f4b2b4564f11)
-
+#### Frontend Repository : [here](https://github.com/futoid/log-show)
 ## Built with
   - client side - NEXT JS
   - server - NODE JS
